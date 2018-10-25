@@ -9,6 +9,7 @@ import {
   Right
 } from "native-base";
 import React, { Component } from "react";
+import FooterTab from "../../components/FooterTab";
 
 class MainScreen extends Component {
   static navigationOptions = {
@@ -34,7 +35,7 @@ class MainScreen extends Component {
             </Button>
           </Right>
         </Header>
-        <Content />
+        <FooterTab />
       </Container>
     );
   }
