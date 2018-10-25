@@ -1,10 +1,20 @@
+import {
+  Body,
+  Button,
+  Container,
+  Content,
+  Header,
+  Icon,
+  Left,
+  Right
+} from "native-base";
 import React, { Component } from "react";
-import { View, Text } from "react-native";
 
 class MainScreen extends Component {
   static navigationOptions = {
     header: null
   };
+
   constructor(props) {
     super(props);
     this.state = {};
@@ -12,9 +22,20 @@ class MainScreen extends Component {
 
   render() {
     return (
-      <View>
-        <Text> textInComponent </Text>
-      </View>
+      <Container>
+        <Header>
+          <Left />
+          <Body />
+          <Right>
+            <Button
+              onPress={() => this.props.navigation.navigate("DeviceInfo")}
+              transparent>
+              <Icon name="info" type="Feather" />
+            </Button>
+          </Right>
+        </Header>
+        <Content />
+      </Container>
     );
   }
 }

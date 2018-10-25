@@ -1,13 +1,13 @@
 import { createStackNavigator } from "react-navigation";
-import MainScreen from '../screen/MainScreen'
+import MainScreen from "../screen/MainScreen";
+import DeviceInfo from "../screen/DeviceInfo";
 
 const Root = createStackNavigator(
-    {
-        MainScreen: {
-            screen: MainScreen
-        }
-    },
-    { initialRouteName: "MainScreen" }
+  {
+    DeviceInfo: DeviceInfo,
+    MainScreen: MainScreen
+  },
+  { initialRouteName: "MainScreen" }
 );
 
 export default Root;
