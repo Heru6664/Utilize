@@ -9,6 +9,7 @@ import {
   Right
 } from "native-base";
 import React, { Component } from "react";
+import { TouchableOpacity } from "react-native";
 import FooterTab from "../../components/FooterTab";
 
 class MainScreen extends Component {
@@ -21,18 +22,28 @@ class MainScreen extends Component {
     this.state = {};
   }
 
+  navigating(routeName) {
+    this.props.navigation.navigate(routeName);
+  }
+
   render() {
     return (
       <Container>
         <Header>
-          <Left />
+          <Left>
+            <TouchableOpacity onPress={() => this.navigating("Scanner")}>
+              <Icon
+                style={{ color: "white" }}
+                name="ios-qr-scanner"
+                type="Ionicons"
+              />
+            </TouchableOpacity>
+          </Left>
           <Body />
           <Right>
-            <Button
-              onPress={() => this.props.navigation.navigate("DeviceInfo")}
-              transparent>
-              <Icon name="info" type="Feather" />
-            </Button>
+            <TouchableOpacity onPress={() => this.navigating("DeviceInfo")}>
+              <Icon style={{ color: "white" }} name="info" type="Feather" />
+            </TouchableOpacity>
           </Right>
         </Header>
         <FooterTab />

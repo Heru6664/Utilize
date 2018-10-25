@@ -8,6 +8,7 @@ const buildNum = DeviceInfo.getBuildNumber();
 const deviceCountry = DeviceInfo.getDeviceCountry();
 const deviceName = DeviceInfo.getDeviceName();
 const sysName = DeviceInfo.getSystemName();
+const androidVersion = DeviceInfo.getSystemVersion();
 
 class DeviceInfoes extends Component {
   constructor(props) {
@@ -21,12 +22,19 @@ class DeviceInfoes extends Component {
       { title: "Build Number", val: buildNum },
       { title: "Device Country", val: deviceCountry },
       { title: "Device Name", val: deviceName },
-      { title: "System Name", val: sysName }
+      { title: "System Name", val: sysName },
+      { title: "System Version", val: androidVersion }
     ];
 
     return (
       <Container>
-        <Content style={{ backgroundColor: "rgba(0,0,0,0.1", padding: 10 }}>
+        <Content
+          style={{
+            backgroundColor: "rgba(0,0,0,0.1",
+            padding: 10,
+            paddingBottom: 0,
+            marginBottom: 15
+          }}>
           <H1>About This Phone</H1>
           <FlatList
             data={data}
